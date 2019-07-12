@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         foreach (Bomb bomb in BombManager.activeBombList)
         {
             if (!bomb.activated)
-            {
+            { 
                 yield return new WaitForSeconds(.5f);
                 bomb.Activate();
             }

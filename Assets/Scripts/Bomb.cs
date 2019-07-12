@@ -7,13 +7,19 @@ public class Bomb : MonoBehaviour
 
     [HideInInspector] public bool activated;
 
-    private float power = 10f;
-    private float radius = 5f;
-    private float upForce = 1f;
+    private const float POWER = 14f, RADIUS = 3f, UP_FORCE = 1f;
 
     private void Start()
     {
         activated = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 10 && tag == "PassiveBomb")
+        {
+            Trigger();
+        }
     }
 
     public void SetLabelText(int number)
@@ -26,17 +32,39 @@ public class Bomb : MonoBehaviour
     {
         Debug.Log("Ding " + label.text);
         activated = true;
+        Detonate();
         gameObject.SetActive(false);
+    }
+
+    public void Trigger()
+    {
+        if (!activated)
+        {
+            activated = true;
+            Invoke("Activate", .25f);
+        }
     }
 
     private void Detonate()
     {
         Vector3 explosionPosition = transform.position;
-        Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius);
+        Collider[] colliders = Physics.OverlapSphere(explosionPosition, RADIUS);
 
         foreach (Collider hit in colliders)
         {
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
 
+            if (rb != null)
+            {
+                rb.AddExplosionForce(POWER, explosionPosition, RADIUS, UP_FORCE, ForceMode.Impulse);
+            }
+
+            if (hit.tag == "PassiveBomb")
+            {
+                hit.GetComponent<Bomb>().Trigger();
+            }
         }
     }
+
+
 }
