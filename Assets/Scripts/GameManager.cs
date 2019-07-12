@@ -1,28 +1,31 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private UIManager gameUI;
 
-    [HideInInspector] public string sceneName;
+    private GridManager gridManager;
 
     public int time;
 
-    private GridManager gridManager;
+    [SerializeField] private Animator animator;
 
     private void Start()
     {
         gameUI.enabled = true;
-        sceneName = SceneManager.GetActiveScene().name;
         gridManager = GetComponent<GridManager>();
+    }
 
+    public void Begin()
+    {
         StartCoroutine(TimeCounter());
     }
 
     private IEnumerator TimeCounter()
     {
+        yield return new WaitForSeconds(.5f);
+
         int timeLeft = time;
 
         while (timeLeft >= 0)
@@ -48,8 +51,9 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         Debug.Log("The End!");
+        animator.SetTrigger("FadeOut");
     }
 }

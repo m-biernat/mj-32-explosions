@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
         _bombManager = gameManager.GetComponent<BombManager>();
         _gameManager = gameManager.GetComponent<GameManager>();
 
-        level.text = _gameManager.sceneName;
+        level.text = LevelChanger.levelIndex.ToString();
 
         timer.maxValue = _gameManager.time;
         timer.value = timer.maxValue;

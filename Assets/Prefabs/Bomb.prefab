@@ -202,6 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: {fileID: 114661323979689662}
   activated: 0
+  explosionFx: {fileID: 1020503507877262, guid: 7f5df230566444a439ac799e2b8e9342,
+    type: 2}
 --- !u!114 &114661323979689662
 MonoBehaviour:
   m_ObjectHideFlags: 1

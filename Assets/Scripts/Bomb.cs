@@ -9,6 +9,8 @@ public class Bomb : MonoBehaviour
 
     private const float POWER = 14f, RADIUS = 3f, UP_FORCE = 1f;
 
+    [SerializeField] private GameObject explosionFx;
+
     private void Start()
     {
         activated = false;
@@ -30,7 +32,7 @@ public class Bomb : MonoBehaviour
 
     public void Activate()
     {
-        Debug.Log("Ding " + label.text);
+        // Debug.Log("Ding " + label.text);
         activated = true;
         Detonate();
         gameObject.SetActive(false);
@@ -50,6 +52,10 @@ public class Bomb : MonoBehaviour
         Vector3 explosionPosition = transform.position;
         Collider[] colliders = Physics.OverlapSphere(explosionPosition, RADIUS);
 
+        GameObject fx;
+        fx = Instantiate(explosionFx, transform.position, explosionFx.transform.rotation);
+        Destroy(fx, .5f);
+
         foreach (Collider hit in colliders)
         {
             Rigidbody rb = hit.GetComponent<Rigidbody>();
@@ -65,6 +71,4 @@ public class Bomb : MonoBehaviour
             }
         }
     }
-
-
 }
