@@ -69,6 +69,11 @@ public class Bomb : MonoBehaviour
             {
                 hit.GetComponent<Bomb>().Trigger();
             }
+
+            if (hit.tag == "Destructable")
+            {
+                hit.GetComponent<Destructable>().destroyed = true;
+            }
         }
     }
 }

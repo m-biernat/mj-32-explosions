@@ -308,11 +308,21 @@ Prefab:
     - target: {fileID: 224465184401068588, guid: 0728f732a349b5a49aac8938dc02b86d,
         type: 2}
       propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224701783801078208, guid: 0728f732a349b5a49aac8938dc02b86d,
+        type: 2}
+      propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0728f732a349b5a49aac8938dc02b86d, type: 2}
   m_IsPrefabAsset: 0
+--- !u!95 &796844485 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95740953629817470, guid: 0728f732a349b5a49aac8938dc02b86d,
+    type: 2}
+  m_PrefabInternal: {fileID: 796844484}
 --- !u!1 &837845109 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1528306716773696, guid: 884635ee631a7434eaf739ee4431f3d4,
@@ -596,7 +606,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PLACE THE BOMB ON HIGHLIGHTED AREA
+  m_Text: PLACE THE BOMB IN THE HIGHLIGHTED AREA
 --- !u!222 &1689915434
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -643,11 +653,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114429960438608868, guid: 884635ee631a7434eaf739ee4431f3d4,
-        type: 2}
-      propertyPath: grid
-      value: 
-      objectReference: {fileID: 1964813310}
     - target: {fileID: 114554151278659302, guid: 884635ee631a7434eaf739ee4431f3d4,
         type: 2}
       propertyPath: gameUI
@@ -655,19 +660,19 @@ Prefab:
       objectReference: {fileID: 364213611}
     - target: {fileID: 114554151278659302, guid: 884635ee631a7434eaf739ee4431f3d4,
         type: 2}
-      propertyPath: animator
+      propertyPath: fadeAnimator
       value: 
       objectReference: {fileID: 961509596}
     - target: {fileID: 114554151278659302, guid: 884635ee631a7434eaf739ee4431f3d4,
         type: 2}
-      propertyPath: time
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114883961184305830, guid: 884635ee631a7434eaf739ee4431f3d4,
+      propertyPath: clearAnimator
+      value: 
+      objectReference: {fileID: 796844485}
+    - target: {fileID: 114429960438608868, guid: 884635ee631a7434eaf739ee4431f3d4,
         type: 2}
-      propertyPath: maxBombCount
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 1964813310}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 884635ee631a7434eaf739ee4431f3d4, type: 2}
   m_IsPrefabAsset: 0

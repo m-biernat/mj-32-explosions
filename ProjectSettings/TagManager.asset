@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PassiveBomb
   - GameManager
+  - Destructable
   layers:
   - Default
   - TransparentFX

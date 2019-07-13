@@ -287,6 +287,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 95550185282924650, guid: 0728f732a349b5a49aac8938dc02b86d,
     type: 2}
   m_PrefabInternal: {fileID: 796844484}
+--- !u!95 &1194961773 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95740953629817470, guid: 0728f732a349b5a49aac8938dc02b86d,
+    type: 2}
+  m_PrefabInternal: {fileID: 796844484}
 --- !u!1001 &1308395612
 Prefab:
   m_ObjectHideFlags: 0
@@ -477,11 +482,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114429960438608868, guid: 884635ee631a7434eaf739ee4431f3d4,
-        type: 2}
-      propertyPath: grid
-      value: 
-      objectReference: {fileID: 1964813310}
     - target: {fileID: 114554151278659302, guid: 884635ee631a7434eaf739ee4431f3d4,
         type: 2}
       propertyPath: gameUI
@@ -489,9 +489,24 @@ Prefab:
       objectReference: {fileID: 364213611}
     - target: {fileID: 114554151278659302, guid: 884635ee631a7434eaf739ee4431f3d4,
         type: 2}
-      propertyPath: animator
+      propertyPath: fadeAnimator
       value: 
       objectReference: {fileID: 961509596}
+    - target: {fileID: 114554151278659302, guid: 884635ee631a7434eaf739ee4431f3d4,
+        type: 2}
+      propertyPath: clearAnimator
+      value: 
+      objectReference: {fileID: 1194961773}
+    - target: {fileID: 114429960438608868, guid: 884635ee631a7434eaf739ee4431f3d4,
+        type: 2}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 1964813310}
+    - target: {fileID: 114883961184305830, guid: 884635ee631a7434eaf739ee4431f3d4,
+        type: 2}
+      propertyPath: maxBombCount
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 884635ee631a7434eaf739ee4431f3d4, type: 2}
   m_IsPrefabAsset: 0

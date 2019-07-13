@@ -69,8 +69,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameUI: {fileID: 0}
+  fadeAnimator: {fileID: 0}
+  clearAnimator: {fileID: 0}
   time: 3
-  animator: {fileID: 0}
 --- !u!114 &114883961184305830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,4 +84,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 1394312682601958, guid: fee1cce360baad944a2f7a7b2e840d86, type: 2}
-  maxBombCount: 5
+  maxBombCount: 1

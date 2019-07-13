@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,9 +8,12 @@ public class GameManager : MonoBehaviour
 
     private GridManager gridManager;
 
+    [SerializeField] private Animator fadeAnimator;
+    [SerializeField] private Animator clearAnimator;
+
     public int time;
 
-    [SerializeField] private Animator animator;
+    public static List<Destructable> destructables;
 
     private void Start()
     {
@@ -46,14 +50,40 @@ public class GameManager : MonoBehaviour
         {
             if (!bomb.activated)
             { 
-                yield return new WaitForSeconds(.5f);
                 bomb.Activate();
+                yield return new WaitForSeconds(.5f);
             }
         }
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(.5f);
 
-        Debug.Log("The End!");
-        animator.SetTrigger("FadeOut");
+        CompleteLevel();
+
+        yield return new WaitForSeconds(1f);
+
+        fadeAnimator.SetTrigger("FadeOut");
     }
+
+    private void CompleteLevel()
+    {
+        bool areAllObjectsDestroyed = true;
+
+        foreach (Destructable item in destructables)
+        {
+            if (item.destroyed == false)
+            {
+                areAllObjectsDestroyed = false;
+            }
+        }
+
+        destructables.Clear();
+        destructables = null;
+
+        if (areAllObjectsDestroyed == true)
+        {
+            LevelChanger.levelIndex++;
+            clearAnimator.SetTrigger("Clear");
+        }
+    }
+
 }

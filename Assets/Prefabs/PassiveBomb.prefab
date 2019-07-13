@@ -96,8 +96,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 4e190c21706dab34598df88ee209a891, type: 2}
   - {fileID: 2100000, guid: 2f90ca46988e6a648bd61896aa99e37e, type: 2}
+  - {fileID: 2100000, guid: 4e190c21706dab34598df88ee209a891, type: 2}
   - {fileID: 2100000, guid: 23e38b56a4b71b44bbb81a360ffdd895, type: 2}
   - {fileID: 2100000, guid: c492160b338170a4bb43f7bc5321cfed, type: 2}
   - {fileID: 2100000, guid: 95915322d801cf24c8940f8c9ffa53b0, type: 2}
@@ -230,6 +230,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: {fileID: 114185953100807934}
   activated: 0
+  explosionFx: {fileID: 1020503507877262, guid: 7f5df230566444a439ac799e2b8e9342,
+    type: 2}
 --- !u!114 &114998101945236102
 MonoBehaviour:
   m_ObjectHideFlags: 1
