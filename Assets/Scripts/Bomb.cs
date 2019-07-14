@@ -43,7 +43,7 @@ public class Bomb : MonoBehaviour
         if (!activated)
         {
             activated = true;
-            Invoke("Activate", .25f);
+            Invoke("Activate", .4f);
         }
     }
 

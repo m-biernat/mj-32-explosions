@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
         {
             if (item.destroyed == false)
             {
+                Debug.Log(item.name + " " + item.destroyed);
                 areAllObjectsDestroyed = false;
             }
         }
