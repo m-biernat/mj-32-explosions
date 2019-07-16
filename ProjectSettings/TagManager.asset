@@ -7,6 +7,7 @@ TagManager:
   - PassiveBomb
   - GameManager
   - Destructable
+  - Soundtrack
   layers:
   - Default
   - TransparentFX

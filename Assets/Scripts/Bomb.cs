@@ -54,7 +54,7 @@ public class Bomb : MonoBehaviour
 
         GameObject fx;
         fx = Instantiate(explosionFx, transform.position, explosionFx.transform.rotation);
-        Destroy(fx, .5f);
+        Destroy(fx, 1.5f);
 
         foreach (Collider hit in colliders)
         {
